@@ -4,5 +4,5 @@ fetch的简易封装
 httpFetch('./example',{
   data:{id: id}
 })
-  .then(res => {})  //成功回调
-  .catch(err => {})   //失败回调
+  .then(res => {})
+  .catch(err => {})
