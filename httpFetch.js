@@ -13,13 +13,10 @@ export default function(url) {
   }
   return fetch(url, fetchParams)
     .then(response => {
-      return  response.json()
-        .then(json => {
-          if (response.ok) {         //判断状态码 >= 200 and < 300
-            return json              //返回body
-          } else {
-            return Promise.reject(json)     //返回错误信息
-          }
-        })
+      if(response.status === 200){
+        return  response.json()
+      }else {
+        return Promise.reject('xx错误')
+      }
     })
 }
